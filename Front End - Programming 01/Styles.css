@@ -1,0 +1,485 @@
+:root {
+    --main-color: #2266E4;
+    --second-color: #14212D;
+    --main-modal-color: rgba(34, 102, 228, 0.85);
+    --second-modal-color: rgba(20, 33, 45, 0.85);
+    --container-width: 1200px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    align-content: initial;
+    background-color: var(--main-modal-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1 {
+    color:  #FFFFFF;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 2.2rem;
+    margin: 0;
+    margin-top: -.4rem;
+}
+
+.Section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.TitleContent {
+    font-family: Verdana, Tahoma, sans-serif, Tahoma, sans-serif;
+    font-size: 1.8rem;
+    padding-top: 1rem;
+}
+
+.SubtitleContent {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+
+/* BUTTON DARK/LIGHT MODE */
+
+#DivMode {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+}
+
+#Sun {
+    float: left;
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+#Moon {
+    margin-left: -4.4rem;
+    margin-right: 2rem;
+}
+
+.ButtonMode {
+    background-color: var(--second-color);
+    border: none;
+    border-radius: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    opacity: 1;
+    outline: none;
+    padding: .5rem;
+    top: 1rem;
+    transition: all .3s ease;
+}
+
+.ButtonMode:hover {
+    transform: scale(0.9);
+}
+
+.Hidden {
+    transition: all .1s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.DarkTheme {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* MENU */
+
+#DivButtonMenu{
+    align-items: center;
+    bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    right: .5vw;
+    z-index: 120;
+}
+
+.Button {
+    background-color:var(--main-color);
+    border: #000000 solid;
+    border-radius: 100%;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    outline: none;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    transition: all .3s ease;
+}
+
+.Button:hover {
+    transform: scale(0.9);
+}
+
+.Panel {
+    background-color: var(--second-modal-color);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;  
+    top: 4.3rem;
+    transform: translate(0, 100%);
+    transition: transform .3s ease, opacity .5s ease;
+    width: 100%;
+    z-index: 90;
+}
+
+.Active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.Menu{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: inherit;
+}
+
+#TitleMenu {
+    color: #FFFFFF;
+    display: block;
+    font-family: Verdana, Tahoma, sans-serif, Tahoma, sans-serif;
+    font-size: 2.2rem;
+    margin: 1rem;
+    width: inherit;
+}
+
+.Menu a{
+    color: var(--main-color);
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin: 0;
+    padding: .5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.Menu a:hover {
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+    font-weight: bolder;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/* RESPONSIVE SLIDER */
+
+#Slider {
+    background-color: var(--second-color);
+    margin: 1rem auto;
+    margin-top: 6rem;
+    position: relative;
+    text-align: center;
+    width: 80%;
+}
+
+.Slides {
+    height: 400px;
+    position: relative;
+}
+
+.Slide {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 1s ease;
+    visibility: hidden;
+    width: 100%;
+}
+
+.Slide.Active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.Slide img {
+    height: inherit;
+    object-fit: cover;
+    object-position: 50% 0%;
+    width: inherit;
+}
+
+.Slide blockquote {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.SliderButtons {
+    display: flex;
+    font-size: 2.8rem;
+    font-weight: bold;
+    justify-content: space-between;
+    margin: 1rem;
+    top: 45%;
+    position: absolute;
+    width: 95%;
+}
+
+#Slider a {
+    background-color: #FFFFFF;
+    border: solid #000000;
+    border-radius: 50%;
+    color: #000000;
+    display: block;
+    height: 4rem;
+    text-decoration: none;
+    transition: all .3s ease;
+    width: 4rem;
+}
+
+#Slider a:hover {
+        transform: scale(0.9);
+}
+
+/* FILTROS DE BÚSQUEDAS */
+
+#CardFilter {
+    border: var(--main-color) .3rem solid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5rem;
+    margin: .5rem;
+    margin-top: 5rem;
+    outline: none;
+    text-align: center;
+    width: 60%;
+}
+
+#Cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.Card {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all 0.3s ease-out;
+}
+
+.Card img {
+    height: auto;
+    width: 100%;
+}
+
+.Card figcaption {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.Filter {
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+}
+
+/* VALIDACIONES DE UN FORMULARIO */
+
+#CommentForm {
+    align-items: center;
+    background-color: var(--main-color);
+    border: var(--second-color) solid;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 4rem;
+    padding: 2rem;
+    width: 70%;
+}
+
+.CommentFormInput {
+    border: none;
+    border-bottom: var(--second-color) .3rem solid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.8rem;
+    margin: .5rem;
+    outline: none;
+    width: 60%;
+}
+
+#CommentInput {
+    height: 8rem;
+    resize: none;
+}
+
+.CommentFormInput:focus {
+    background: linear-gradient(to bottom, #FFFFFF, var(--second-modal-color));
+}
+
+.CommentFormInput::placeholder {
+    color: var(--second-color);
+    padding-left: .5rem;
+}
+
+#CommentInput::placeholder {
+    padding-top: .5rem;
+}
+
+.SendButton {
+    background-color: #FFFFFF;
+    border: solid;
+    color: var(--second-color);
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2rem;
+    padding: .5rem;
+    width: 30%;
+}
+
+#SendResponse {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.CommentFormError {
+    background-color: #B71C1C;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+    height: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -.8rem;
+    transition: all 800ms ease;
+    width: 60%;
+}
+
+.CommentFormError.Show {
+    display: block;
+    animation: ShowMessage 1s 1 normal 0s ease-out both;
+}
+
+@keyframes ShowMessage {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {    
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.None {
+    display: none;
+}
+
+/* SCROLLSPY */
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-areas: 
+            "Header  Header"
+            "Content Panel";
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+    }
+
+    header {
+        grid-area: Header;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    #DivButtonMenu {
+        display: none;
+    }
+    
+    .Panel {
+        align-self: start;
+        padding-bottom: 22rem;
+        background-color: var(--second-color);
+        grid-area: Panel;
+        justify-content: flex-start;
+        opacity: 1;
+        position: sticky;
+        transform: translate(0,0);
+        top: 4.3rem;
+        visibility: visible;
+    }
+
+    .Menu {
+        justify-content: start;
+        text-align: left;
+    }
+
+    #TitleMenu {
+        font-size: 2rem;
+        margin: 0;
+        margin-bottom: .5rem;
+        padding: .25rem;
+        text-align: center;
+    }
+
+    .Menu a {
+        font-size: .9rem;
+        padding: 0;
+        padding-left: .5rem;
+    }
+
+    .Menu a:hover, .Menu a.Active {
+        color: var(--second-color);
+        background-color: var(--main-color);
+    }
+
+    #Content {
+        grid-area: Content;
+    }
+}

@@ -1,0 +1,407 @@
+:root {
+    --main-color: #EB1E5B;
+    --second-color: #FFBACE;
+    --subtitle-color: #707070;
+    --main-modal-color: #EB1E5BD9;
+    --second-modal-color: #FFBACED9;
+    --subtitle-modal-color: #707070CC;
+    --container-width: 1200px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* FUENTES DE LA PÁGINA */
+
+@font-face{
+    font-family: 'Bodoni Bold';
+    src: url('./Fuentes/Bodoni Bold.eot');
+    src: url('./Fuentes/Bodoni Bold.ttf'),
+        url('./Fuentes/Bodoni Bold.otf'),
+        url('./Fuentes/Bodoni Bold.woff'),
+        url('./Fuentes/Bodoni Bold.svg');
+}
+
+@font-face {
+    font-family: 'Bodoni Italic';
+    src: url('./Fuentes/Bodoni Italic.eot');
+    src: url('./Fuentes/Bodoni Italic.ttf'),
+        url('./Fuentes/Bodoni Italic.otf'),
+        url('./Fuentes/Bodoni Bold.woff'),
+        url('./Fuentes/Bodoni Italic.svg');
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('./Fuentes/Montserrat Light.eot');
+    src: url('./Fuentes/Montserrat Light.ttf'),
+        url('./Fuentes/Montserrat Light.otf'),
+        url('./Fuentes/Montserrat Light.woff'),
+        url('./Fuentes/Montserrat Light.svg');
+}
+
+/* ESTILOS GENERALES DE LOS TÍTULOS Y PÁRRAFOS */
+
+h1, h2, h3{
+    font-family: 'Bodoni Bold';
+}
+
+h1{
+    line-height: .8;
+}
+
+h2{
+    font-size: 3.6em;
+    line-height: .8;
+    margin: .5em;
+    text-align: center;
+}
+
+h3{
+    color: var(--main-color);
+    font-size: 2.6em;
+    line-height: .8;
+    margin: .5em;
+}
+
+h4 {
+    font-family: 'Montserrat Light';
+    font-size: 1.8em;
+    font-weight: lighter;
+    line-height: .8;
+    margin: 2em 4em;
+}
+
+p, a{
+    font-family: 'Montserrat Light';
+    font-size: 1.4em;
+}
+
+a{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none; 
+}
+
+span{
+    font-weight: bold;
+}
+
+/* CABECERA Y PIE DE PÁGINA */
+
+header, footer{
+    clear: both;
+    color: #FFFFFF;
+    background: #000000;
+    padding: .3em;
+    text-align: center;
+}
+
+/* CABECERA */
+
+header{
+    display: flex;
+    font-size: 2.2em;
+    justify-content: space-evenly;
+}
+
+#Title{
+    width: 40%;
+}
+
+#SubHeader{
+    font-family: 'Bodoni Italic';
+    font-size: .6em;
+    line-height: .5;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.HeadFlowers{
+    max-width: 25%;
+}
+
+/* PIE DE PÁGINA */
+
+footer{
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+#Copyright{
+    margin: .5em;
+}
+
+#Credits{
+    color: var(--subtitle-color);
+    font-size: .8em;
+}
+
+/* BARRA DE NAVEGACIÓN */
+
+nav{
+    background: var(--second-modal-color);
+    clear: both;
+    padding: .6em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.OptNav{
+    color: #000000;
+    line-height: 1.2;
+    text-decoration: none;
+    padding-left: 1.4em;
+}
+
+.OptNav:hover{
+    color: var(--main-color);
+}
+
+i{
+    box-sizing: border-box;
+    margin-right: .5em;
+}
+
+/* DESCRIPCIÓN DEL BLOG */
+
+#BlogDescriptionContainer{
+    align-items: center;
+    background: var(--main-modal-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#BlogDescription{
+    flex: 2;
+    color: #FFFFFF;
+    max-width: 58em;
+    min-width: 30em;
+    padding-bottom: 1.2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: justify;
+}
+
+#BlogDescriptionImg{
+    flex: 1;
+    margin-right: 2em;
+    max-width: 25em;
+    min-width: 15em;
+}
+
+/* SECCIÓN DE ARTÍCULOS */
+
+#ArticleSectionTitle{
+    margin-top: 1em;
+}
+
+#ArticleSection{
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+    margin: 1em;
+}
+
+/* CONTENEDORES DE LOS ARTÍCULOS */
+
+.ArticleCard{
+    display: inline-block;
+    margin: 1em;
+    transition:all 0.5s ease;
+    width: 25em;
+}
+
+.ArticleCard:hover{
+    transform: scale(0.9);
+}
+
+.ArticleImg{
+    margin: auto;
+    width: 100%;
+}
+
+.ArticleTitle{
+    color: var(--main-color);
+    font-family: 'Bodoni Bold';
+    font-weight: bold;
+    line-height: .8;
+    margin-bottom: .4em;
+    margin-top: .4em;
+    text-align: right;
+}
+
+.ArticleSub{
+    color: #707070;
+    font-family: 'Bodoni Italic';
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    line-height: .8;
+    text-align: right;
+}
+
+    /* Link del Blog */
+
+.LinkBlogDiv{
+    display: flex;
+    margin-bottom: 2.5em;
+    margin-top: 1em;
+}
+
+.LinkBlogContainer{
+    margin: auto;
+    padding: .8em;
+}
+
+.LinkBlog{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* ARTÍCULO CENTRAL */
+
+#ArticleCentral{
+    display: flex;
+    position: relative;
+    text-align: right;
+}
+
+#ArticleCentralImgContainer{
+    display: flex;
+}
+
+#ArticleCentralImg{
+    margin: 1.5em auto;
+    width: 60%;
+}
+
+#ArticleCentralText{
+    background: var(--subtitle-modal-color);
+    color: #FFFFFF;
+    left: 12em;
+    position: absolute;
+    top: 14em;
+    width: 60%;
+}
+
+#ArticleCentralTitle{
+    margin-bottom: 0;
+    text-align: right;
+}
+
+#ArticleCentralSub{
+    font-family: 'Bodoni Italic';
+    margin-right: 1em;
+    margin-top: 0;
+    text-align: right;
+}
+
+/* CONTENEDORES DE TEXTO OSCURO */
+
+.Post{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+.ImgPrincipalContainer{
+    display: flex;
+}
+
+.ImgPrincipal{
+    margin: auto;
+    padding: 1em;
+    width: 60%;
+}
+
+.PostBody{
+    margin: auto;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    text-align: justify;
+    width: 75%;
+}
+
+.PostBodyDarkContainer{
+    background: #000000;
+    width: 100%;
+}
+
+.PostBodyDark{
+    color: #FFFFFF;
+    margin: auto;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    text-align: justify;
+    width: 75%;
+}
+
+.PostBodyDark h3{
+    color: var(--main-color);
+}
+
+    /* FRASE RESALTANTE*/
+
+.Highlight{
+    color: var(--main-color);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+    /* SUBTÍTULOS DE LOS ARTÍCULOS*/
+
+.Subtitle{
+    color: var(--subtitle-color);
+    font-family: 'Bodoni Italic';
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: .8;
+    margin: 0;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media screen and (max-width: 1200px){
+    #Title{
+        width: 100%;
+    }
+    
+    #BlogDescriptionImg, .HeadFlowers{
+        display: none;
+    }
+
+    #ArticleCentralText {
+        background: #FFFFFF;
+        padding: .5em;
+        padding-top: 0;
+        position: static;
+        margin: auto;
+    }
+
+    #ArticleCentralTitle{
+        color: var(--main-color);
+        font-size: 2em;
+        margin-top: 0;
+    }
+
+    #ArticleCentralSub{
+        color: var(--subtitle-color);
+        font-size: 1.4em;
+    }
+}

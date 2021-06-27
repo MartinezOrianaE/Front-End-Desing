@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Index</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="Styles.css">
+        <link rel="shortcut icon" href="./Media/favicon.png">
+    </head>
+
+    <body>
+        <header>
+            <h1>Página Web</h1>
+
+            <!-- DARK/LIGHT MODE BUTTON -->
+            <div class="DivButtonsMode">
+                <button id="Moon" class="ButtonMode" type="button">🌙</button>
+                <button id="Sun" class="ButtonMode Hidden" type="button">☀️</button>
+            </div>
+        </header>
+
+        <!-- MENU -->
+        
+        <div id="DivButtonMenu" >
+            <button id="ButtonMenu" class="Button" type="button">Ξ</button>
+        </div>
+
+        <div class="Panel">
+            <nav class="Menu">
+                <h2 id="TitleMenu">Menú</h2>
+
+                <a href="#Section1" data-scrollspy><h3>Responsive Slider</h3></a>
+                <a href="#Section2" data-scrollspy><h3>Filtros de Búsquedas</h3></a>
+                <a href="#Section3" data-scrollspy><h3>Formulario de Contacto</h3></a>
+            </nav>
+        </div>
+
+        <div id="Content">
+            <section id="Section1" class="Section" data-scrollspy>
+                <h2 class="TitleContent">Responsive Slider</h2>
+
+                <!-- RESPONSIVE SLIDER -->
+
+                <div id="Slider">
+                    <div class="Slides">
+                        <div class="Slide Active">
+                            <blockquote>
+                                <p>Definirse es limitarse</p>
+                                <cite>Oscar Wilde</cite>
+                            </blockquote>
+                        </div>
+
+                        <div class="Slide">
+                            <img src="./Media/Smile.jpeg" alt="Chica sonriendo">
+                        </div>
+
+                        <div class="Slide">
+                            <blockquote>
+                                <p>Try to keep the sense of knowing who i am</p>
+                                <cite>Sabrina Carpenter</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="SliderButtons">
+                        <a class="Prev" href="#">&laquo;</a>
+                        
+                        <a class="Next" href="#">&raquo;</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Section2" class="Section" data-scrollspy>
+                <h2 class="TitleContent">Filtros de Búsquedas</h2>
+
+                <input type="search" placeholder="Buscar..." id="CardFilter">
+
+                <article id="Cards">
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/any" alt="Any">
+
+                        <figcaption>Any</figcaption>
+                    </figure>
+
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+
+                        <figcaption>Nature</figcaption>
+                    </figure>
+
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+
+                        <figcaption>Tech</figcaption>
+                    </figure>
+
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+
+                        <figcaption>Animals</figcaption>
+                    </figure>
+
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/people" alt="People">
+
+                        <figcaption>People</figcaption>
+                    </figure>
+
+                    <figure class="Card">
+                        <img src="https://placeimg.com/200/200/arch" alt="Architecture">
+
+                        <figcaption>Architecture</figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <section id="Section3" class="Section" data-scrollspy>
+                <h2 class="TitleContent">Formulario de Contacto</h2>
+
+                <h3 class="SubtitleContent">¡Envía tu comentario!</h3>
+
+                <!-- VALIDACIONES DE UN FORMULARIO -->
+
+                <form id="CommentForm">
+                    <input class="CommentFormInput" type="text" name="Name" placeholder="Nombre" title="Nombre Inválido. El campo solo admite letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$" required/>
+                    <input class="CommentFormInput" type="email" name="Email" placeholder="Email" title="Email Inválido" pattern="^[a-z0-9]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[_a-z0-9-]+)*(\.[a-z]{2,15})$" required/>
+                    <input class="CommentFormInput" type="text" name="Title" placeholder="Asunto" title="Campo Vacío. El Asunto es requerido" required/>
+
+                    <textarea id="CommentInput" class="CommentFormInput" name="Comment" cols="50" rows="5" placeholder="Escribe tu comentario..." title="Comentario Inválido. El campo solo admite 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
+
+                    <br>
+                    
+                    <input class="SendButton" type="submit" name="Send" value="Enviar" />
+
+                    <div id="SendLoader" class="None">
+                        <img src="./Cargando.png" alt="Cargando">
+                    </div>
+
+                    <div id="SendResponse" class="None">
+                        <p>¡Tu comentario ha sido enviado!</p>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <script src="ScriptsIndex.js" type="module"></script>
+    </body>
+</html>
